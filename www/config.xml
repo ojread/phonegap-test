@@ -52,7 +52,7 @@
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
 
-    <gap:plugin name="org.phonegap.cordova.device-motion" version="0.1.0" />
+    <gap:plugin name="com.phonegap.plugins.device-motion" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
