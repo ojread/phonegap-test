@@ -16,7 +16,7 @@ var app = {
 	// function, we must explicity call 'app.receivedEvent(...);'
 	onDeviceReady: function() {
 		accelerometer.startWatching();
-		contacts.find();
+		//contacts.find();
 	}
 };
 
@@ -55,17 +55,17 @@ var accelerometer = {
 		// Save values.
 		this.lastAcceleration = acceleration;*/
 
-		var total = acceleration.x + acceleration.y + acceleration.z;
-		document.getElementById("total").innerHTML = total;
-
-		if (total < 5) {
-			document.getElementById("dropped").innerHTML = "Dropped!";
-		}
-
 		// Show debug values.
 		document.getElementById("x").innerHTML = acceleration.x;
 		document.getElementById("y").innerHTML = acceleration.y;
 		document.getElementById("z").innerHTML = acceleration.z;
+
+		var total = acceleration.x + acceleration.y + acceleration.z;
+		document.getElementById("total").innerHTML = total;
+
+		/*if (total < 5) {
+			document.getElementById("dropped").innerHTML = "Dropped!";
+		}*/
 	},
 
 	error: function() {
@@ -81,7 +81,7 @@ var accelerometer = {
 };
 
 
-var contacts = {
+/*var contacts = {
 
 	find: function() {
 		var fields = ["displayName", "name"];
@@ -101,4 +101,4 @@ var contacts = {
 		);
 	}
 
-};
+};*/
