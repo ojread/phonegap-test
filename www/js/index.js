@@ -24,8 +24,7 @@ var app = {
 
 var accelerometer = {
 	watchID: null,
-	lastAcceleration: null,
-	sensitivity: 0.1,
+	//lastAcceleration: null,
 
 	startWatching: function() {
 		var options = {
@@ -41,7 +40,7 @@ var accelerometer = {
 
 	success: function(acceleration) {
 		// Compare to last measurements if available.
-		if (this.lastAcceleration) {
+		/*if (this.lastAcceleration) {
 			deltaX = acceleration.x - lastAcceleration.x;
 			deltaY = acceleration.y - lastAcceleration.y;
 			deltaZ = acceleration.z - lastAcceleration.z;
@@ -54,7 +53,14 @@ var accelerometer = {
 		}
 
 		// Save values.
-		this.lastAcceleration = acceleration;
+		this.lastAcceleration = acceleration;*/
+
+		var total = acceleration.x + acceleration.y + acceleration.z;
+		document.getElementById("total").innerHTML = total;
+
+		if (total < 5) {
+			document.getElementById("dropped").innerHTML = "Dropped!";
+		}
 
 		// Show debug values.
 		document.getElementById("x").innerHTML = acceleration.x;
