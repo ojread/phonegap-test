@@ -16,6 +16,7 @@ var app = {
 	// function, we must explicity call 'app.receivedEvent(...);'
 	onDeviceReady: function() {
 		accelerometer.startWatching();
+		contacts.find();
 	}
 };
 
@@ -48,7 +49,7 @@ var accelerometer = {
 			if (deltaX>this.sensitivity ||
 				deltaY>this.sensitivity ||
 				deltaZ>this.sensitivity) {
-				window.alert("POW!");
+				document.getElementById("dropped").innerHTML = "Dropped!";
 			}
 		}
 
