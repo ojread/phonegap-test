@@ -29,15 +29,6 @@ var app = {
 		receivedElement.setAttribute('style', 'display:block;');
 
 		console.log('Received Event: ' + id);
-	},
-	accelerometerSuccess: function(acceleration) {
-		alert('Acceleration X: ' + acceleration.x + '\n' +
-			  'Acceleration Y: ' + acceleration.y + '\n' +
-			  'Acceleration Z: ' + acceleration.z + '\n' +
-			  'Timestamp: '      + acceleration.timestamp + '\n');
-	},
-	accelerometerError: function() {
-		alert("accelerometerError!");
 	}
 };
 
