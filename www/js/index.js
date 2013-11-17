@@ -60,7 +60,12 @@ var accelerometer = {
 		document.getElementById("y").innerHTML = acceleration.y;
 		document.getElementById("z").innerHTML = acceleration.z;
 
-		var total = acceleration.x + acceleration.y + acceleration.z;
+		// Calculate vector length.
+		var total = Math.sqrt(
+			acceleration.x * acceleration.x +
+			acceleration.y * acceleration.y +
+			acceleration.z * acceleration.z
+		);
 		document.getElementById("total").innerHTML = total;
 
 		/*if (total < 5) {
