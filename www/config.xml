@@ -6,13 +6,13 @@
         id        = "uk.co.oliverread.phonegap-test"
         version   = "1.0.0">
 
-    <name>Ollie's test</name>
+    <name>PhoneGap test</name>
 
     <description>
         Test app that uses phonegap.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
+    <author href="http://oliverread.co.uk" email="oliver@oliverread.co.uk">
         PhoneGap Team
     </author>
 
