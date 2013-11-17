@@ -52,7 +52,7 @@
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
 
-    <gap:plugin name="org.apache.cordova.AccelListener" />
+    <gap:plugin name="org.apache.cordova.contacts" version="0.2.3" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
