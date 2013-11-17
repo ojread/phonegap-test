@@ -37,7 +37,7 @@ var app = {
 var accelerometer = {
 	watchID: null,
 	lastAcceleration: null,
-	sensitivity: 5,
+	sensitivity: 1,
 
 	startWatching: function() {
 		var options = {
