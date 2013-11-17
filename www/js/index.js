@@ -80,6 +80,7 @@ var contacts = {
 	find: function() {
 		var fields = ["displayName", "name"];
 		var options = new ContactFindOptions();
+		options.filter = "An";
 		navigator.contacts.find(
 			fields,
 			function() {
