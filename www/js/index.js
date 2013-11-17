@@ -15,20 +15,7 @@ var app = {
 	// The scope of 'this' is the event. In order to call the 'receivedEvent'
 	// function, we must explicity call 'app.receivedEvent(...);'
 	onDeviceReady: function() {
-		app.receivedEvent('deviceready');
-
 		accelerometer.startWatching();
-	},
-	// Update DOM on a Received Event
-	receivedEvent: function(id) {
-		var parentElement = document.getElementById(id);
-		var listeningElement = parentElement.querySelector('.listening');
-		var receivedElement = parentElement.querySelector('.received');
-
-		listeningElement.setAttribute('style', 'display:none;');
-		receivedElement.setAttribute('style', 'display:block;');
-
-		console.log('Received Event: ' + id);
 	}
 };
 
@@ -37,7 +24,7 @@ var app = {
 var accelerometer = {
 	watchID: null,
 	lastAcceleration: null,
-	sensitivity: 1,
+	sensitivity: 0.1,
 
 	startWatching: function() {
 		var options = {
@@ -61,7 +48,7 @@ var accelerometer = {
 			if (deltaX>this.sensitivity ||
 				deltaY>this.sensitivity ||
 				deltaZ>this.sensitivity) {
-				alert("POW!");
+				window.alert("POW!");
 			}
 		}
 

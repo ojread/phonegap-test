@@ -4,16 +4,16 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "uk.co.oliverread.phonegap-test"
-        version   = "1.0.0">
+        version   = "0.0.1">
 
     <name>PhoneGap Test</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Project for learning to use various PhoneGap features.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Team
+    <author href="http://oliverread.co.uk" email="oliver@oliverread.co.uk">
+        Oliver Read
     </author>
 
     <!--
