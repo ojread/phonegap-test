@@ -89,11 +89,11 @@ var contacts = {
 		options.filter = "An";
 		navigator.contacts.find(
 			fields,
-			function() {
+			function(contacts) {
 				document.getElementById("contacts").innerHTML =
 					"Found " + contacts.length + " contacts.";
 			},
-			function() {
+			function(contactError) {
 				document.getElementById("contacts").innerHTML =
 					"Error";
 			},
