@@ -36,10 +36,12 @@ var app = {
 
 var accelerometer = {
 	watchID: null,
+	lastAcceleration: null,
+	sensitivity: 5,
 
 	startWatching: function() {
 		var options = {
-			frequency: 1000
+			frequency: 100
 		};
 
 		this.watchID = navigator.accelerometer.watchAcceleration(
@@ -50,6 +52,23 @@ var accelerometer = {
 	},
 
 	success: function(acceleration) {
+		// Compare to last measurements if available.
+		if (this.lastAcceleration) {
+			deltaX = acceleration.x - lastAcceleration.x;
+			deltaY = acceleration.y - lastAcceleration.y;
+			deltaZ = acceleration.z - lastAcceleration.z;
+
+			if (deltaX>this.sensitivity ||
+				deltaY>this.sensitivity ||
+				deltaZ>this.sensitivity) {
+				alert("POW!");
+			}
+		}
+
+		// Save values.
+		this.lastAcceleration = acceleration;
+
+		// Show debug values.
 		document.getElementById("x").innerHTML = acceleration.x;
 		document.getElementById("y").innerHTML = acceleration.y;
 		document.getElementById("z").innerHTML = acceleration.z;
