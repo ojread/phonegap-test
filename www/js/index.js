@@ -71,4 +71,26 @@ var accelerometer = {
         	watchID = null;
 		}
 	}
-}
+};
+
+
+var contacts = {
+
+	find: function() {
+		var fields = ["displayName", "name"];
+		var options = new ContactFindOptions();
+		navigator.contacts.find(
+			fields,
+			function() {
+				document.getElementById("contacts").innerHTML =
+					"Found " + contacts.length + " contacts.";
+			},
+			function() {
+				document.getElementById("contacts").innerHTML =
+					"Error";
+			},
+			options
+		);
+	}
+
+};
