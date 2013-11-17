@@ -52,7 +52,7 @@
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
 
-    <gap:plugin name="com.phonegap.plugins.camera" />
+    <gap:plugin name="org.apache.cordova.AccelListener" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
