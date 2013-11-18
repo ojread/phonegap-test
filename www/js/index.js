@@ -19,7 +19,7 @@ var app = {
 	// function, we must explicity call 'app.receivedEvent(...);'
 	onDeviceReady: function() {
 		accelerometer.startWatching();
-		//contacts.find();
+		contacts.find();
 	}
 };
 
@@ -98,11 +98,9 @@ var contacts = {
 
 	findSuccess: function(contacts) {
 		for (var i=0; i<contacts.length; i++) {
-			/*$("#contacts").append(
+			$("#contacts").append(
 				"<li>" + contacts[i].displayName + "</li>"
-			);*/
-			$("#contacts").text(i);
-		}
+			);		}
 	},
 
 	findError: function(error) {
