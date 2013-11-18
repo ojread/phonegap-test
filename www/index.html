@@ -14,15 +14,26 @@
 
 		<div id="mainPage" data-role="page">
 			<div data-role="header">
+				<a href="#optionsPage" data-icon="gear" class="ui-btn-right">Options</a>
 				<h1>PhoneGap Test</h1>
 			</div>
 			<div data-role="content">
-				<p><a href="#accelerometerPage" data-role="button">Accelerometer</a></p>
-				<p><a href="#contactsPage" data-role="button">Contactss</a></p>
+				<p>Main page</p>
+				<p>Show app status here</p>
 			</div>
 		</div>
 
-		<div id="accelerometerPage" data-role="page">
+		<div id="optionsPage" data-role="page" data-add-back-btn="true">
+			<div data-role="header">
+				<h1>Options</h1>
+			</div>
+			<div data-role="content">
+				<p><a href="#accelerometerPage" data-role="button">Accelerometer</a></p>
+				<p><a href="#contactsPage" data-role="button">Contacts</a></p>
+			</div>
+		</div>
+
+		<div id="accelerometerPage" data-role="page" data-add-back-btn="true">
 			<div data-role="header">
 				<h1>Accelerometer</h1>
 			</div>
@@ -34,7 +45,7 @@
 			</div>
 		</div>
 
-		<div id="contactsPage" data-role="page">
+		<div id="contactsPage" data-role="page" data-add-back-btn="true">
 			<div data-role="header">
 				<h1>Contacts</h1>
 			</div>
@@ -48,6 +59,7 @@
 
 		<script type="text/javascript" src="phonegap.js"></script>
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="js/jquery-mobile-options.js"></script>
 		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 
