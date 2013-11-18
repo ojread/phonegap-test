@@ -11,14 +11,21 @@
 		<title>PhoneGap Test</title>
 	</head>
 	<body>
-		<h1>PhoneGap Test</h1>
-		<p>total: <span id="total"></span></p>
-		<p>min: <span id="min"></span></p>
-		<p>max: <span id="max"></span></p>
-		<p><button onclick="accelerometer.reset();">Reset</button></p>
 
-		<p id="length"></p>
-		<p id="contacts"></p>
+		<div id="main" data-role="page">
+			<div data-role="header">
+				<h1>PhoneGap Test</h1>
+			</div>
+			<div data-role="content">
+				<p>total: <span id="total"></span></p>
+				<p>min: <span id="min"></span></p>
+				<p>max: <span id="max"></span></p>
+				<p><button onclick="accelerometer.reset();">Reset</button></p>
+
+				<p id="length"></p>
+				<p id="contacts"></p>
+			</div>
+		</div>
 
 		<script type="text/javascript" src="phonegap.js"></script>
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>

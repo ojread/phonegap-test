@@ -16,7 +16,7 @@ var app = {
 	// function, we must explicity call 'app.receivedEvent(...);'
 	onDeviceReady: function() {
 		accelerometer.startWatching();
-		contacts.find();
+		//contacts.find();
 	}
 };
 
@@ -29,7 +29,7 @@ var accelerometer = {
 
 	startWatching: function() {
 		var options = {
-			frequency: 200
+			frequency: 500
 		};
 
 		this.watchID = navigator.accelerometer.watchAcceleration(
@@ -47,7 +47,7 @@ var accelerometer = {
 			acceleration.z * acceleration.z
 		);
 
-		$("#total").text(total);
+		//$("#total").text(total);
 
 		if (null === accelerometer.min || total < accelerometer.min)
 			accelerometer.min = total;
@@ -59,7 +59,7 @@ var accelerometer = {
 	},
 
 	error: function() {
-		$("#x").text = "Error";
+		$("#x").text("Error");
 	},
 
 	stopWatching: function() {
