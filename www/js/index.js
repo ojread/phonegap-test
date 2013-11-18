@@ -53,15 +53,11 @@ var accelerometer = {
 		);
 		document.getElementById("total").innerHTML = total;
 
-		if (total < this.min) {
-			this.min = total;
-			document.getElementById("min").innerHTML = this.min;
-		}
+		if (total < this.min) this.min = total;
+		document.getElementById("min").innerHTML = this.min;
 
-		if (total > this.max) {
-			this.max = total;
-			document.getElementById("max").innerHTML = this.max;
-		}
+		if (total > this.max) this.max = total;
+		document.getElementById("max").innerHTML = this.max;
 	},
 
 	error: function() {
@@ -76,8 +72,8 @@ var accelerometer = {
 	},
 
 	reset: function() {
-		this.min = null;
-		this.max = null;
+		this.min = 9.8;
+		this.max = 9.8;
 	}
 };
 
