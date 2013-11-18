@@ -24,7 +24,8 @@ var app = {
 
 var accelerometer = {
 	watchID: null,
-	//lastAcceleration: null,
+	min: null,
+	max: null,
 
 	startWatching: function() {
 		var options = {
@@ -39,22 +40,6 @@ var accelerometer = {
 	},
 
 	success: function(acceleration) {
-		// Compare to last measurements if available.
-		/*if (this.lastAcceleration) {
-			deltaX = acceleration.x - lastAcceleration.x;
-			deltaY = acceleration.y - lastAcceleration.y;
-			deltaZ = acceleration.z - lastAcceleration.z;
-
-			if (deltaX>this.sensitivity ||
-				deltaY>this.sensitivity ||
-				deltaZ>this.sensitivity) {
-				document.getElementById("dropped").innerHTML = "Dropped!";
-			}
-		}
-
-		// Save values.
-		this.lastAcceleration = acceleration;*/
-
 		// Show debug values.
 		document.getElementById("x").innerHTML = acceleration.x;
 		document.getElementById("y").innerHTML = acceleration.y;
@@ -68,9 +53,15 @@ var accelerometer = {
 		);
 		document.getElementById("total").innerHTML = total;
 
-		/*if (total < 5) {
-			document.getElementById("dropped").innerHTML = "Dropped!";
-		}*/
+		if (total < min) {
+			min = total;
+			document.getElementById("min").innerHTML = min;
+		}
+
+		if (total < max) {
+			max = total;
+			document.getElementById("max").innerHTML = max;
+		}
 	},
 
 	error: function() {
@@ -82,6 +73,11 @@ var accelerometer = {
         	navigator.accelerometer.clearWatch(watchID);
         	watchID = null;
 		}
+	},
+
+	reset: function() {
+		this.min = null;
+		this.max = null;
 	}
 };
 
