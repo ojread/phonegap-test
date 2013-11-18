@@ -12,21 +12,39 @@
 	</head>
 	<body>
 
-		<div id="main" data-role="page">
+		<div id="mainPage" data-role="page">
 			<div data-role="header">
 				<h1>PhoneGap Test</h1>
+			</div>
+			<div data-role="content">
+				<p><a href="#accelerometerPage" data-role="button">Accelerometer</a></p>
+				<p><a href="#contactsPage" data-role="button">Contactss</a></p>
+			</div>
+		</div>
+
+		<div id="accelerometerPage" data-role="page">
+			<div data-role="header">
+				<h1>Accelerometer</h1>
 			</div>
 			<div data-role="content">
 				<p>min: <span id="min"></span></p>
 				<p>max: <span id="max"></span></p>
 				<p><button onclick="accelerometer.reset();">Reset</button></p>
-
-				<p id="length"></p>
-				<p id="contacts"></p>
-
-				<p id="error"></p>
+				<p><a href="#mainPage" data-direction="reverse" data-role="button">Back</a></p>
 			</div>
 		</div>
+
+		<div id="contactsPage" data-role="page">
+			<div data-role="header">
+				<h1>Contacts</h1>
+			</div>
+			<div data-role="content">
+				<p>Listing all contacts:</p>
+				<p id="contacts"></p>
+				<p><a href="#mainPage" data-direction="reverse" data-role="button">Back</a></p>
+			</div>
+		</div>
+
 
 		<script type="text/javascript" src="phonegap.js"></script>
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
