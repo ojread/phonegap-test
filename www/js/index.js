@@ -1,4 +1,5 @@
 $("#error").text("Startup");
+console.log("Startup");
 
 var app = {
 	// Application Constructor
@@ -11,6 +12,7 @@ var app = {
 	// 'load', 'deviceready', 'offline', and 'online'.
 	bindEvents: function() {
 		$("#error").text("Ready");
+		console.log("Ready");
 		document.addEventListener('deviceready', this.onDeviceReady, false);
 	},
 	// deviceready Event Handler
@@ -31,6 +33,7 @@ var accelerometer = {
 	max: null,
 
 	startWatching: function() {
+		console.log("startWatching");
 		var options = {
 			frequency: 500
 		};
