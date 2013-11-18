@@ -36,3 +36,9 @@
 	box-shadow: none;
 	-webkit-box-shadow: none;
 }
+
+
+/* Hide content until jQuery Mobile is ready to style. */
+body {
+	display: none;
+}

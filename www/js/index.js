@@ -1,5 +1,4 @@
-// Show loading screen instead of unstyled content.
-//$.mobile.
+$(function() { $("body").show(); });
 
 var app = {
 	// Application Constructor
