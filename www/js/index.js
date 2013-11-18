@@ -97,11 +97,11 @@ var contacts = {
 	},
 
 	findSuccess: function(contacts) {
-		var output = "";
 		for (var i=0; i<contacts.length; i++) {
-			$("#contacts").append(
+			/*$("#contacts").append(
 				"<li>" + contacts[i].displayName + "</li>"
-			);
+			);*/
+			$("#contacts").text(i);
 		}
 	},
 
