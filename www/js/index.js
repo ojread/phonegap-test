@@ -81,7 +81,7 @@ var contacts = {
 	find: function() {
 		var fields = ["displayName", "name"];
 		var options = new ContactFindOptions();
-		options.filter = "An";
+		options.filter = "a";
 		navigator.contacts.find(
 			fields,
 			this.findSuccess,
