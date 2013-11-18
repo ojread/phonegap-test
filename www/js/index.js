@@ -16,7 +16,7 @@ var app = {
 	// function, we must explicity call 'app.receivedEvent(...);'
 	onDeviceReady: function() {
 		accelerometer.startWatching();
-		//contacts.find();
+		contacts.find();
 	}
 };
 
@@ -24,8 +24,8 @@ var app = {
 
 var accelerometer = {
 	watchID: null,
-	min: 9,
-	max: 9,
+	min: null,
+	max: null,
 
 	startWatching: function() {
 		var options = {
@@ -40,11 +40,6 @@ var accelerometer = {
 	},
 
 	success: function(acceleration) {
-		// Show debug values.
-		document.getElementById("x").innerHTML = acceleration.x;
-		document.getElementById("y").innerHTML = acceleration.y;
-		document.getElementById("z").innerHTML = acceleration.z;
-
 		// Calculate vector length.
 		var total = Math.sqrt(
 			acceleration.x * acceleration.x +
@@ -52,10 +47,12 @@ var accelerometer = {
 			acceleration.z * acceleration.z
 		);
 
-		if (total < accelerometer.min) accelerometer.min = total;
+		if (null === accelerometer.min || total < accelerometer.min)
+			accelerometer.min = total;
 		document.getElementById("min").innerHTML = accelerometer.min;
 
-		if (total > accelerometer.max) accelerometer.max = total;
+		if (null === accelerometer.max || total > accelerometer.max)
+			accelerometer.max = total;
 		document.getElementById("max").innerHTML = accelerometer.max;
 
 		document.getElementById("total").innerHTML = total;
@@ -79,7 +76,7 @@ var accelerometer = {
 };
 
 
-/*var contacts = {
+var contacts = {
 
 	find: function() {
 		var fields = ["displayName", "name"];
@@ -99,4 +96,4 @@ var accelerometer = {
 		);
 	}
 
-};*/
+};
