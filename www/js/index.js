@@ -100,7 +100,7 @@ var contacts = {
 		var output = "";
 		for (var i=0; i<contacts.length; i++) {
 			$("#contacts").append(
-				$("<li>" + contacts[i].displayName + "</li>")
+				"<li>" + contacts[i].displayName + "</li>"
 			);
 		}
 	},
