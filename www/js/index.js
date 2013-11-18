@@ -40,6 +40,8 @@ var accelerometer = {
 	},
 
 	success: function(acceleration) {
+		console.log(acceleration);
+
 		// Calculate vector length.
 		var total = Math.sqrt(
 			acceleration.x * acceleration.x +
@@ -47,7 +49,7 @@ var accelerometer = {
 			acceleration.z * acceleration.z
 		);
 
-		//$("#total").text(total);
+		$("#total").text(total);
 
 		if (null === accelerometer.min || total < accelerometer.min)
 			accelerometer.min = total;
@@ -59,7 +61,7 @@ var accelerometer = {
 	},
 
 	error: function() {
-		$("#x").text("Error");
+		$("#error").text("Accelerometer error");
 	},
 
 	stopWatching: function() {
@@ -70,8 +72,8 @@ var accelerometer = {
 	},
 
 	reset: function() {
-		this.min = 9.8;
-		this.max = 9.8;
+		this.min = null;
+		this.max = null;
 	}
 };
 
