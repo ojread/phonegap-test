@@ -52,11 +52,11 @@ var accelerometer = {
 			acceleration.z * acceleration.z
 		);
 
-		if (total < this.min) this.min = total;
-		document.getElementById("min").innerHTML = 1;
+		//if (total < this.min) this.min = total;
+		document.getElementById("min").innerHTML = this.min;
 
-		if (total > this.max) this.max = total;
-		document.getElementById("max").innerHTML = 2;
+		//if (total > this.max) this.max = total;
+		document.getElementById("max").innerHTML = this.max;
 
 		document.getElementById("total").innerHTML = total;
 	},
