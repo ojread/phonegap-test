@@ -40,8 +40,6 @@ var accelerometer = {
 	},
 
 	success: function(acceleration) {
-		console.log(acceleration);
-
 		// Calculate vector length.
 		var total = Math.sqrt(
 			acceleration.x * acceleration.x +
