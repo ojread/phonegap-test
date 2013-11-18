@@ -53,8 +53,12 @@ var accelerometer = {
 		);
 		document.getElementById("total").innerHTML = total;
 
-		if (null === this.min) this.min = total;
-		if (null === this.max) this.max= total;
+		if (null == this.min) {
+			this.min = total;
+		}
+		if (null == this.max) {
+			this.max = total;
+		}
 
 		if (total < this.min) {
 			this.min = total;
