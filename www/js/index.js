@@ -47,19 +47,19 @@ var accelerometer = {
 			acceleration.z * acceleration.z
 		);
 
+		$("#total").text(total);
+
 		if (null === accelerometer.min || total < accelerometer.min)
 			accelerometer.min = total;
-		document.getElementById("min").innerHTML = accelerometer.min;
+		$("#min").text(accelerometer.min);
 
 		if (null === accelerometer.max || total > accelerometer.max)
 			accelerometer.max = total;
-		document.getElementById("max").innerHTML = accelerometer.max;
-
-		document.getElementById("total").innerHTML = total;
+		$("#max").text(accelerometer.max);
 	},
 
 	error: function() {
-		document.getElementById("x").innerHTML = "Error";
+		$("#x").text = "Error";
 	},
 
 	stopWatching: function() {
@@ -79,10 +79,14 @@ var accelerometer = {
 var contacts = {
 
 	find: function() {
+		// Contact fields to search.
 		var fields = ["displayName", "name"];
+
+		// Find all contacts.
 		var options = new ContactFindOptions();
-		options.filter = "a";
+		options.filter = "";
 		options.multiple = true;
+
 		navigator.contacts.find(
 			fields,
 			this.findSuccess,
@@ -92,18 +96,15 @@ var contacts = {
 	},
 
 	findSuccess: function(contacts) {
-		document.getElementById("length").innerHTML = contacts.length;
-
 		var output = "";
 		for (var i=0; i<contacts.length; i++) {
 			output += contacts[i].displayName + ", ";
 		}
-		document.getElementById("contacts").innerHTML = output;
+		$("#contacts").html(output);
 	},
 
 	findError: function(error) {
-		document.getElementById("contacts").innerHTML =
-			"Error: " + error;
+		$("#contacts").text("Error: " + error);
 	}
 
 };
