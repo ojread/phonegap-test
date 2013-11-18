@@ -1,6 +1,6 @@
 // Custom jQuery Mobile options.
 $(document).bind("mobileinit", function(){
-	$.extend(  $.mobile , {
+	$.extend($.mobile, {
 		defaultPageTransition: "slide"
 	});
 });

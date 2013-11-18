@@ -1,3 +1,6 @@
+// Show loading screen instead of unstyled content.
+//$.mobile.
+
 var app = {
 	// Application Constructor
 	initialize: function() {
@@ -96,9 +99,10 @@ var contacts = {
 	findSuccess: function(contacts) {
 		var output = "";
 		for (var i=0; i<contacts.length; i++) {
-			output += contacts[i].displayName + ", ";
+			$("#contacts").append(
+				$("<li>" + contacts[i].displayName + "</li>")
+			);
 		}
-		$("#contacts").html(output);
 	},
 
 	findError: function(error) {

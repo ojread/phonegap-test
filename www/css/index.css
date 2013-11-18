@@ -1,0 +1,2 @@
+/* Fix for page transitions on Android */
+.ui-page { -webkit-backface-visibility: hidden; }
