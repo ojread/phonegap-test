@@ -84,16 +84,23 @@ var contacts = {
 		options.filter = "An";
 		navigator.contacts.find(
 			fields,
-			function(contacts) {
-				document.getElementById("contacts").innerHTML =
-					"Found " + contacts.length + " contacts.";
-			},
-			function(contactError) {
-				document.getElementById("contacts").innerHTML =
-					"Error";
-			},
+			this.findSuccess,
+			this.findError,
 			options
 		);
+	},
+
+	findSuccess: function(contacts) {
+		var output = "";
+		for (var i=0; i<contacts.length; i++) {
+			output += contacts[i].displayName + "<br>";
+		}
+		document.getElementById("contacts").innerHTML = output;
+	},
+
+	findError: function(error) {
+		document.getElementById("contacts").innerHTML =
+			"Error: " + error;
 	}
 
 };
