@@ -91,9 +91,11 @@ var contacts = {
 	},
 
 	findSuccess: function(contacts) {
+		document.getElementById("length").innerHTML = contacts.length;
+
 		var output = "";
 		for (var i=0; i<contacts.length; i++) {
-			output += contacts[i].displayName + "<br>";
+			output += contacts[i].displayName + ", ";
 		}
 		document.getElementById("contacts").innerHTML = output;
 	},
