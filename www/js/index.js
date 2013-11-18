@@ -82,6 +82,7 @@ var contacts = {
 		var fields = ["displayName", "name"];
 		var options = new ContactFindOptions();
 		options.filter = "a";
+		options.multiple = true;
 		navigator.contacts.find(
 			fields,
 			this.findSuccess,
