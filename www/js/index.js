@@ -24,8 +24,8 @@ var app = {
 
 var accelerometer = {
 	watchID: null,
-	min: null,
-	max: null,
+	min: 9.8,
+	max: 9.8,
 
 	startWatching: function() {
 		var options = {
@@ -52,13 +52,6 @@ var accelerometer = {
 			acceleration.z * acceleration.z
 		);
 		document.getElementById("total").innerHTML = total;
-
-		if (null == this.min) {
-			this.min = total;
-		}
-		if (null == this.max) {
-			this.max = total;
-		}
 
 		if (total < this.min) {
 			this.min = total;
