@@ -1,6 +1,3 @@
-$("#error").text("Startup");
-console.log("Startup");
-
 var app = {
 	// Application Constructor
 	initialize: function() {
@@ -11,8 +8,6 @@ var app = {
 	// Bind any events that are required on startup. Common events are:
 	// 'load', 'deviceready', 'offline', and 'online'.
 	bindEvents: function() {
-		$("#error").text("Ready");
-		console.log("Ready");
 		document.addEventListener('deviceready', this.onDeviceReady, false);
 	},
 	// deviceready Event Handler
@@ -33,9 +28,8 @@ var accelerometer = {
 	max: null,
 
 	startWatching: function() {
-		console.log("startWatching");
 		var options = {
-			frequency: 500
+			frequency: 100
 		};
 
 		this.watchID = navigator.accelerometer.watchAcceleration(
@@ -54,8 +48,6 @@ var accelerometer = {
 			acceleration.y * acceleration.y +
 			acceleration.z * acceleration.z
 		);
-
-		$("#total").text(total);
 
 		if (null === accelerometer.min || total < accelerometer.min)
 			accelerometer.min = total;
@@ -78,7 +70,6 @@ var accelerometer = {
 	},
 
 	reset: function() {
-		console.log("reset");
 		this.min = null;
 		this.max = null;
 	}
