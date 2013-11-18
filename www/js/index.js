@@ -53,17 +53,17 @@ var accelerometer = {
 		);
 		document.getElementById("total").innerHTML = total;
 
-		if (null === min) min = total;
-		if (null === max) max= total;
+		if (null === this.min) this.min = total;
+		if (null === this.max) this.max= total;
 
-		if (total < min) {
-			min = total;
-			document.getElementById("min").innerHTML = min;
+		if (total < this.min) {
+			this.min = total;
+			document.getElementById("min").innerHTML = this.min;
 		}
 
-		if (total < max) {
-			max = total;
-			document.getElementById("max").innerHTML = max;
+		if (total > this.max) {
+			this.max = total;
+			document.getElementById("max").innerHTML = this.max;
 		}
 	},
 
