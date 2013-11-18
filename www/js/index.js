@@ -1,3 +1,5 @@
+$("#error").text("Startup");
+
 var app = {
 	// Application Constructor
 	initialize: function() {
@@ -8,6 +10,7 @@ var app = {
 	// Bind any events that are required on startup. Common events are:
 	// 'load', 'deviceready', 'offline', and 'online'.
 	bindEvents: function() {
+		$("#error").text("Ready");
 		document.addEventListener('deviceready', this.onDeviceReady, false);
 	},
 	// deviceready Event Handler
@@ -72,6 +75,7 @@ var accelerometer = {
 	},
 
 	reset: function() {
+		console.log("reset");
 		this.min = null;
 		this.max = null;
 	}
