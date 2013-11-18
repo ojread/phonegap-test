@@ -29,7 +29,7 @@ var accelerometer = {
 
 	startWatching: function() {
 		var options = {
-			frequency: 100
+			frequency: 200
 		};
 
 		this.watchID = navigator.accelerometer.watchAcceleration(
@@ -52,6 +52,9 @@ var accelerometer = {
 			acceleration.z * acceleration.z
 		);
 		document.getElementById("total").innerHTML = total;
+
+		if (null === min) min = total;
+		if (null === max) max= total;
 
 		if (total < min) {
 			min = total;
