@@ -51,13 +51,14 @@ var accelerometer = {
 			acceleration.y * acceleration.y +
 			acceleration.z * acceleration.z
 		);
-		document.getElementById("total").innerHTML = total;
 
 		if (total < this.min) this.min = total;
 		document.getElementById("min").innerHTML = this.min;
 
 		if (total > this.max) this.max = total;
 		document.getElementById("max").innerHTML = this.max;
+
+		document.getElementById("total").innerHTML = total;
 	},
 
 	error: function() {
